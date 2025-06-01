@@ -1,6 +1,4 @@
-function setup() {
-  createCanvas(800, 800, WEBGL);
-}
+
 
 let asciifier; // Define the `asciifier` variable to store the `P5Asciifier` instance
 let img;
