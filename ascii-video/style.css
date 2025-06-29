@@ -1,0 +1,18 @@
+video-container {
+
+         position: relative;
+     }
+
+     
+canvas {
+
+         display: none;
+     }
+
+     
+ascii-art {
+
+         white-space: pre-wrap;
+         font-family: monospace;
+         line-height: 1;
+     }
