@@ -1,7 +1,7 @@
 window.onload = function() {
     // Create a hidden video element and load your video file
     const video = document.createElement('video');
-    video.src = '/video/hand.mp4'; // Specify your video path
+    video.src = 'video/hand.mp4'; // Specify your video path
     video.muted = true;
     video.loop = true;
     video.playbackRate = 0.5; // Start at slower playback speed
