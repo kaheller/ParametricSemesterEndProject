@@ -1,0 +1,161 @@
+/* Import custom font */
+@font-face {
+  font-family: "Retron2000";
+  src: url("font/Retron2000.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #463f3a; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Retron2000", sans-serif;
+}
+
+h1 {
+  color: #f4f3ee;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Retron2000", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px rgba(188,184,177,0.6);
+}
+
+.tv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bigger TV Frame with 3D effect */
+.tv-frame {
+  background: linear-gradient(145deg, #fff 0%, #ddd 100%);
+  border-radius: 16px;
+  padding: 3%;
+  width: 50vw;  /* Half the viewport width */
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 8px 20px rgba(0,0,0,0.6), 
+    inset -4px -4px 10px rgba(0,0,0,0.2), 
+    inset 4px 4px 10px rgba(255,255,255,0.6);
+  position: relative;
+}
+
+/* The dark CRT screen */
+.tv-screen {
+  position: relative;
+  background: radial-gradient(circle at center, #ffffff 40%, #111 100%);
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+  overflow: hidden;
+}
+
+/* Curved glass overlay */
+.glass-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.05) 40%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 0, 0, 0.4) 0%,
+      transparent 80%
+    );
+  pointer-events: none;
+}
+
+
+.tv-frame::before, 
+.tv-frame::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 20px;
+  background: linear-gradient(to right, #bbb, #eee);
+  border-radius: 4px;
+}
+.tv-frame::before {
+  left: -25px;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.5);
+}
+.tv-frame::after {
+  right: -25px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.5);
+}
+
+
+.tv-stand {
+  width: 160px;
+  height: 25px;
+  background: linear-gradient(to bottom, #666, #333);
+  margin-top: 14px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+}
+
+.tv-legs {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  margin-top: 12px;
+}
+
+.leg {
+  width: 14px;
+  height: 60px;
+  background: linear-gradient(to bottom, #555, #222);
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+}
+
+.leg.left {
+  transform: rotate(10deg);
+}
+
+.leg.right {
+  transform: rotate(-10deg);
+}
+
+
+@media (max-width: 768px) {
+  .tv-frame {
+    width: 80vw;
+  }
+  .tv-stand {
+    width: 100px;
+    height: 18px;
+  }
+  .tv-legs {
+    width: 120px;
+  }
+  .leg {
+    height: 40px;
+  }
+}
+.footer-text {
+  position: fixed;
+  bottom: 15px;
+  left: 20px;
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0.7;
+}
